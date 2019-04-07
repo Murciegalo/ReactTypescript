@@ -1,6 +1,7 @@
 import React , {Fragment , useState} from 'react'
 import ReactDOM from 'react-dom'
-
+//SASS
+//import 'style/main.scss';
 
 type formElm = React.FormEvent<HTMLFormElement>
 
@@ -23,11 +24,31 @@ export default function App() : JSX.Element {
       setValue(' ')
     };
 
-  // Add to Do's
-    const adder = (text: string) => {
-      const nueTodos : ITodo[]  =  [... todos , {text , complete: false}]
+  // ADD  to Do's
+    const adder = (text: string) : void  => {
+      const nueTodos : ITodo[]  =  [ ... todos , { text ,  complete:  false  }];
       setTodos(nueTodos)
     };
+
+    //TOGGLE  to  Do's
+    const complete = (index : number) : void  => {
+      //array for to Do's
+      const nueTodos : ITodo[] = [ ... todos] ;
+      //toogle for to Do's
+      nueTodos[index].complete = !nueTodos[index].complete
+      //set
+      setTodos(nueTodos); 
+    }
+
+    // REMOVE  to Do's
+    const remove = ( index: number) : void => {
+      //get all to do's
+      const nueTodos: ITodo[] = [...todos];
+      //remove selected one
+      nueTodos.splice(index , 1);
+      // Set restantes to Do's
+      setTodos(nueTodos);
+    }
     
   return (
     <Fragment>
@@ -37,9 +58,22 @@ export default function App() : JSX.Element {
         <button type="submit">Add to Do</button>
       </form>
       <section>
-        {todos.map(  (todo : ITodo , index : number) => {
-          return <div key = {index}>{todo.text}</div>
-        })}
+        {todos.map(  (todo : ITodo , index : number)  =>
+          //For every encapsulated component from our To Do's List , a different Index is assigned.
+          <Fragment key={index}>
+
+            <div style = {{ textDecoration: todo.complete ? 'line-through' : '' }}>{todo.text}</div>
+            {/* completed or not */}
+            <button type='button' onClick = { ()  =>  complete(index)}> 
+            {todo.complete ?  'Incomplete'  :  'Complete' } 
+            </button>
+            {/* remove to Do */}
+            <button type='button' onClick={() => remove(index)}>
+              &times;
+            </button>
+
+          </Fragment>  
+        )}
       </section>
     </Fragment>
   )
