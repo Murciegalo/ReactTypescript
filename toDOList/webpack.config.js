@@ -1,6 +1,8 @@
 
 const path = require('path')
 
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+
 //Loaders
 const rules = [
     { //babel
@@ -10,13 +12,20 @@ const rules = [
     },
     //SASS
     {
-        test: /\.s?css/,
-        use: [
-            "style-loader", //1
-            "css-loader",
-            "sass-loader"
+        test: /\.scss$/ ,
+        loaders : [
+            require.resolve("style-loader"), 
+            require.resolve("css-loader"),
+            require.resolve("sass-loader")
         ]
     },
+    // {
+    //     exclude : [ /\.(js | jsx | mjs |)$/ , /\.html$/ , /\.json$/, /\.scss$/ ],
+    //     loader: require.resolve('file-loader'),
+    //     options: {
+    //         name: 'static/media/[name].[hash:8].[ext]',
+    //     }
+    // },
     //IMAGES
     {
         test: /\.(gif|png|jpe?g|svg)/i,
@@ -58,9 +67,14 @@ module.exports = {
     //Loaders
     module: { rules },
     resolve: { extensions:  [ '.ts' , '.tsx' , '.js']},    //take care of files' extensions for me
-    //Plugins
     devServer: {
         contentBase: './',
         port: 5000
-    }
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            filename: "index.html",
+            template: "./src/index.html"
+        })
+    ]
 }

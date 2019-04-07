@@ -1,7 +1,7 @@
 import React , {Fragment , useState} from 'react'
 import ReactDOM from 'react-dom'
 //SASS
-//import 'style/main.scss';
+import './style/app.scss'
 
 type formElm = React.FormEvent<HTMLFormElement>
 
@@ -52,7 +52,7 @@ export default function App() : JSX.Element {
     
   return (
     <Fragment>
-      <h1>To do list App</h1>
+      <h1>To Do's list</h1>
       <form onSubmit = {handleSubmit}>
         <input type="text"  value = {value}  onChange = {e  =>  setValue(e.target.value) }  required/>
         <button type="submit">Add to Do</button>
