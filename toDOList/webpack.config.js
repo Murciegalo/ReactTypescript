@@ -71,6 +71,18 @@ module.exports = {
         contentBase: './',
         port: 5000
     },
+    // Common Chunks
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                commons: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: 'common',
+                    chunks: 'all'
+                }
+            }
+        }
+    },
     plugins: [
         new HtmlWebpackPlugin({
             filename: "index.html",
