@@ -66,7 +66,9 @@ module.exports = {
     },
     //Loaders
     module: { rules },
+    //extensions care
     resolve: { extensions:  [ '.ts' , '.tsx' , '.js']},    //take care of files' extensions for me
+    //server
     devServer: {
         contentBase: './',
         port: 5000
