@@ -1,7 +1,7 @@
 {
   "name": "TypeScriptReact",
   "version": "1.0.0",
-  "description": "Apps developed with React &amp; Typescript",
+  "description": "",
   "main": "index.js",
   "dependencies": {
     "create-react-app": "^2.1.8"
