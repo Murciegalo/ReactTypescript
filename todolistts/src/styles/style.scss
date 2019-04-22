@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+body{
+  margin: 0 auto;
+  padding: 15px;
+  background-color: lightblue;
+  text-align: center;
+  &
+  .todos{
+    display: block;
+    margin: 20px;
+    padding: 5px;
+  }
+}
