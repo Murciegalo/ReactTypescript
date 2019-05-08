@@ -62,7 +62,7 @@ module.exports = {
   resolve: { extensions: ['.ts', '.tsx', '.js'] },    //take care of files' extensions for me
   //server
   devServer: {
-    contentBase: './',
+    contentBase: path.join(__dirname , 'dist'),
     port: 5000
   },
   // Common Chunks

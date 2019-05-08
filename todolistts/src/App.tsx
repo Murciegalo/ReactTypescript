@@ -48,7 +48,7 @@ export default function App() : JSX.Element {
   }
   return (
     <Fragment>
-      <h1>Todo List</h1>
+      <h1>To Do List</h1>
 
       {/* FORM */}
       <form onSubmit={handleSub}>
