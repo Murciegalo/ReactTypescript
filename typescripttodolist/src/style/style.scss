@@ -1,17 +1,69 @@
-*{
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
-body{
-  width: 900px;
-  margin: 0 auto;
-  //h1
-  h1{
-    padding: 30px;
-  }
-  //form
-  form{
-    text-align: center;
-  }
+
+body {
+    width: 900px;
+    margin: 0 auto;
+    background-color: azure;
+    //h1
+    h1 {
+        padding: 30px;
+        color: rgba(147, 223, 26, 0.377);
+        font-weight: 600;
+        margin-top: 10vh;
+    }
+    //form
+    form {
+        text-align: center;
+        margin-top: 2vh;
+        //input
+        input {
+            border: none;
+            background: azure;
+            border-bottom: 2px solid bisque;
+            transform: translate(-50%);
+        }
+        //ADD btn
+        button {
+            border: none;
+            background: azure;
+            padding: 5px;
+            margin: 5px;
+            color: bisque;
+            font-size: 30px;
+            font-weight: 600;
+            transform: translate(-300%);
+        }
+    }
+    .todos {
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        width: 600px;
+        //                    task
+        .elem1 {
+          margin-right: 1vw;
+          align-self: center;
+        }
+        //                    Complete/redo
+        .elem2 {
+            //Undo
+            .fa-undo {
+                color: yellow;
+            }
+            //Complete
+            .fa-check {
+                color: green;
+            }
+        }
+        //Delete
+        .elem3 {
+            .fa-ban {
+                color: red;
+            }
+        }
+    }
 }
