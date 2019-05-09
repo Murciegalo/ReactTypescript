@@ -2,16 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 //Redux
-import { StoreProvider } from './Store';
+//import { StoreProvider } from './Store';
 //import * as serviceWorker from './serviceWorker';
 import './styles/style.scss';
 
 
 
 ReactDOM.render(
-  <StoreProvider>
-    <App />
-  </StoreProvider>, 
+    <App />, 
   document.getElementById('root')
 );
 
