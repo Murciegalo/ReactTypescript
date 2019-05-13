@@ -28,5 +28,5 @@ function reducer(state: IState, action: IAction): IState{
 export function StoreProvider(props: any): JSX.Element{
   // useReducer Hook
   const [state , dispatch] = React.useReducer( reducer, initialState);
-  return <Store.Provider value={{state , dispatch}}>{props.children}</Store.Provider>
+  return <Store.Provider value={{state, dispatch}}>{props.children}</Store.Provider>
 }
